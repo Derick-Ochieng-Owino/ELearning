@@ -1,0 +1,58 @@
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+  }
+  
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .auth-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .auth-hero {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    display: none;
+  }
+  
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-2xl); }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 var(--space-3);
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .auth-form {
+    padding: var(--space-6);
+  }
+}

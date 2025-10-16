@@ -1,0 +1,413 @@
+/* ===== MODERN TECH SCHOOL STYLES ===== */
+:root {
+    --primary-blue: #2563eb;
+    --primary-purple: #7c3aed;
+    --tech-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    --dark-bg: #0f172a;
+    --card-bg: #ffffff;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --accent-green: #10b981;
+    --accent-orange: #f59e0b;
+    --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ===== BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+/* ===== LAYOUT STYLES ===== */
+.container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.image {
+    flex: 1.2;
+    background: 
+        linear-gradient(rgba(15, 23, 42, 0.8), rgba(37, 99, 235, 0.4)),
+        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') 
+        no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.3) 0%, transparent 50%);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.content::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%),
+        radial-gradient(circle at bottom left, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ===== SIGNIN FORM STYLES ===== */
+.signinform {
+    background: var(--card-bg);
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-xl);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 440px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signinform:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.signinform header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.signinform img {
+    height: 80px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.signinform h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    background: var(--tech-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.signinform p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== FORM ELEMENTS ===== */
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    color: var(--text-dark);
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    transform: translateY(-2px);
+}
+
+/* ===== BUTTON STYLES ===== */
+.btn-submit {
+    width: 100%;
+    background: var(--tech-gradient);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-submit:hover::before {
+    left: 100%;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* ===== LINK STYLES ===== */
+.form-links {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.form-links a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.form-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-blue);
+    transition: width 0.3s ease;
+}
+
+.form-links a:hover::after {
+    width: 100%;
+}
+
+.form-links a:hover {
+    color: var(--primary-purple);
+}
+
+/* ===== TECH BADGES ===== */
+.tech-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.tech-badge {
+    background: var(--card-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    border: 1px solid #e2e8f0;
+    box-shadow: var(--shadow-lg);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .image {
+        flex: 1;
+        min-height: 40vh;
+        background-position: center 30%;
+    }
+
+    .content {
+        flex: 1;
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .signinform {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+    }
+
+    .signinform h1 {
+        font-size: 1.5rem;
+    }
+
+    .content::before {
+        animation: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .signinform {
+        padding: 1.5rem 1rem;
+    }
+
+    .signinform h1 {
+        font-size: 1.25rem;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"],
+    input[type="tel"],
+    input[type="date"],
+    select {
+        padding: 0.875rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-submit {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.signinform {
+    animation: slideInUp 0.6s ease-out;
+}
+
+/* ===== CUSTOM SELECT STYLES ===== */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding-right: 3rem;
+}
+
+/* ===== LOADING STATE ===== */
+.btn-submit.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.btn-submit.loading::after {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    top: 50%;
+    left: 50%;
+    margin-left: -0.5rem;
+    margin-top: -0.5rem;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===== SUCCESS/ERROR STATES ===== */
+.input-success {
+    border-color: var(--accent-green) !important;
+}
+
+.input-error {
+    border-color: #ef4444 !important;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.success-message {
+    color: var(--accent-green);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
