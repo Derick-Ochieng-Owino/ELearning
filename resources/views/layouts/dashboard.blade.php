@@ -66,6 +66,7 @@
 
         .sidebar.close .text{
             opacity: 0;
+            
         }
 
         .sidebar .image{
