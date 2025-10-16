@@ -13,7 +13,7 @@
         :root{
             --body-color: #E4E9F7;
             --sidebar-color: #FFF;
-            --primary-color: #00AF50;
+            --primary-color: #5efffaff;
             --primary-color-light: #F6F5FF;
             --toggle-color: #DDD;
             --text-color: #707070;
@@ -33,7 +33,7 @@
         body.dark{
             --body-color: #18191A;
             --sidebar-color: #242526;
-            --primary-color: #00AF50;
+            --primary-color: #62a9faff;
             --primary-color-light: #3A3B3C;
             --toggle-color: #FFF;
             --text-color: #CCC;
@@ -368,10 +368,10 @@
 
         @media (max-width: 768px) {
             .sidebar {
-                width: 200px;
+                width: 250px;
             }
             .main-content {
-                width: calc(100% - 200px);
+                width: calc(100% - 250px);
             }
             .mainpage {
                 grid-template-columns: 1fr;
@@ -421,7 +421,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="{{ asset('images/Furaha-icon.png') }}" alt="Furaha Icon">
+                    <img src="{{ asset('images/menti-icon.png') }}" alt="Furaha Icon">
                 </span>
                 <div class="text header-text">
                     <span class="name">MENTIS</span>
